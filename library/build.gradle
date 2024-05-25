@@ -19,20 +19,6 @@ android {
     }
 }
 
-// 4. Add below line
-//===============================
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)        // << --- ADD This
-    }
-}
-//===============================
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_17            // << --- ADD This
-    targetCompatibility = JavaVersion.VERSION_17
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
@@ -47,6 +33,7 @@ sourceSets {
         }
     }
 }
+
 // 5. Add below line
 //===============================
 publishing {
@@ -64,6 +51,7 @@ publishing {
         mavenLocal()
     }
 }
+
 task sourcesJar(type: Jar) {
     classifier = 'sources'
     from sourceSets.main.java, sourceSets.main.resources

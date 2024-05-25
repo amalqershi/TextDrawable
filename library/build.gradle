@@ -36,19 +36,17 @@ sourceSets {
 
 // 5. Add below line
 //===============================
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'com.github.amalqershi'
-            artifactId = 'com-amulyakhare-textdrawable'
-            version = "2.0"
-            pom {
-                description = 'First release'
+afterEvaluate{
+    publishing{
+        publications{
+            release(MavenPublication){
+                from components.release
+
+                groupId='com.amalqershi'
+                artifactId = 'textdrawable'
+                version = '1.0'
             }
         }
-    }
-    repositories {
-        mavenLocal()
     }
 }
 

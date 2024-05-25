@@ -41,7 +41,7 @@ publishing {
         maven(MavenPublication) {
             groupId = 'com.github.amalqershi'
             artifactId = 'com-amulyakhare-textdrawable'
-            version = "1.0"
+            version = "2.0"
             pom {
                 description = 'First release'
             }
